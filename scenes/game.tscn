@@ -1,0 +1,297 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgjhqp7kb4xo8"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_3f27t"]
+[ext_resource type="PackedScene" uid="uid://3v8bgnoklk5o" path="res://scenes/player.tscn" id="1_orgty"]
+[ext_resource type="PackedScene" uid="uid://3nt8ag5lcpdy" path="res://scenes/Tree.tscn" id="2_v8bgh"]
+
+[sub_resource type="Curve2D" id="Curve2D_d3uhi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -791, -646, 0, 0, 0, 0, 2395, -684, 0, 0, 0, 0, 2400, 1432, 0, 0, 0, 0, -839, 1455, 0, 0, 0, 0, -791, -646)
+}
+point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k4u5"]
+bg_color = Color(0.0224198, 0.70812, 0.494926, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gx6s"]
+bg_color = Color(0.334778, 0.609389, 0.939626, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wosje"]
+bg_color = Color(0.865907, 0.364736, 0.849524, 1)
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_3f27t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -742.0
+offset_top = -389.0
+offset_right = 2229.0
+offset_bottom = 1306.0
+
+[node name="Time" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 229.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_orgty")]
+position = Vector2(542, 400)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-542, -400)
+curve = SubResource("Curve2D_d3uhi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-791, -646)
+rotation = -0.0119266
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(213, 226)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(315, 490)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(917, 206)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(701, 270)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(883, 516)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1400, 516)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1578, 766)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1336, 1088)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(713, 1190)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(963, 885)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1569, -22)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1018, -636)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2001, -924)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3103, -1115)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3277, -361)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2938, 529)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2552, -145)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2192, 351)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2167, 1610)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(938, 1767)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(345, 1915)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-350, 1500)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-596, 559)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-299, -55)
+
+[node name="Tree25" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-731, -521)
+
+[node name="Tree26" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(261, -1114)
+
+[node name="Tree27" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-188, -1050)
+
+[node name="Tree28" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1812, -1364)
+
+[node name="Tree29" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1104, -1491)
+
+[node name="Tree30" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1015, -1300)
+
+[node name="Tree31" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1706, -495)
+
+[node name="Tree32" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1668, -37)
+
+[node name="Tree33" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1859, 383)
+
+[node name="Tree34" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1787, 1036)
+
+[node name="Tree35" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1194, 574)
+
+[node name="Tree36" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1448, 1701)
+
+[node name="Tree37" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-1173, 2421)
+
+[node name="Tree38" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1090, 2684)
+
+[node name="Tree39" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2878, 2387)
+
+[node name="Tree40" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1882, 2205)
+
+[node name="Tree41" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(1623, 1591)
+
+[node name="Tree42" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3318, 1464)
+
+[node name="Tree43" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3610, 633)
+
+[node name="Tree44" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(4080, 27)
+
+[node name="Tree45" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3707, -681)
+
+[node name="Tree46" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3516, -1435)
+
+[node name="Tree47" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2749, -1588)
+
+[node name="Tree48" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-421, 2006)
+
+[node name="Tree49" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-2502, 2133)
+
+[node name="Tree50" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-2506, 1438)
+
+[node name="Tree51" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-2718, 434)
+
+[node name="Tree52" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-2468, -477)
+
+[node name="Tree53" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-2460, -1219)
+
+[node name="Tree54" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(-155, -1715)
+
+[node name="Tree55" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(5049, 849)
+
+[node name="Tree56" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(4888, -45)
+
+[node name="Tree57" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(4617, -1003)
+
+[node name="Tree58" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(4409, 1175)
+
+[node name="Tree59" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(4121, 2205)
+
+[node name="Tree60" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(3816, 1069)
+
+[node name="Tree61" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2812, 781)
+
+[node name="Tree62" parent="Trees" instance=ExtResource("2_v8bgh")]
+position = Vector2(2206, 2824)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.415686)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 240
+text = "Game Over"
+
+[node name="Button" type="Button" parent="GameOver/ColorRect"]
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 181.0
+offset_right = 175.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_3k4u5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5gx6s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wosje")
+action_mode = 0
+text = "Restart"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOver/ColorRect/Button" to="." method="_on_button_pressed"]

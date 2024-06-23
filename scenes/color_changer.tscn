@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs3ini1ighocw"]
+
+[ext_resource type="Texture2D" uid="uid://depwtirxm3ry3" path="res://assets/ui/2.png" id="1_73s8h"]
+[ext_resource type="Script" path="res://scripts/color_menu.gd" id="2_4nsj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsqor"]
+
+[node name="ColorChanger" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4nsj7")
+
+[node name="ColorMenu" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -311.0
+offset_right = 150.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_73s8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -134.5
+offset_right = 54.0
+offset_bottom = -33.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Color1" type="CheckButton" parent="ColorMenu/VBoxContainer"]
+modulate = Color(0.040736, 0.040736, 0.040736, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsqor")
+text = "Color 1 "
+
+[node name="Color2" type="CheckButton" parent="ColorMenu/VBoxContainer"]
+modulate = Color(0.040736, 0.040736, 0.040736, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsqor")
+text = "Color 2 "
+
+[node name="Color3" type="CheckButton" parent="ColorMenu/VBoxContainer"]
+modulate = Color(0.040736, 0.040736, 0.040736, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsqor")
+text = "Color 3 "
+
+[connection signal="pressed" from="ColorMenu/VBoxContainer/Color1" to="." method="_on_color_1_pressed"]
+[connection signal="pressed" from="ColorMenu/VBoxContainer/Color2" to="." method="_on_color_2_pressed"]
+[connection signal="pressed" from="ColorMenu/VBoxContainer/Color3" to="." method="_on_color_3_pressed"]

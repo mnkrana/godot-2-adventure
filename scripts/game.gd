@@ -28,3 +28,7 @@ func _on_button_pressed():
 	print("button pressed")
 	get_tree().reload_current_scene()
 	#get_tree().paused = false
+
+func _on_color_changer_color_changed(color: Color):
+	print("Change color to "+ str(color))
+	%GameBg.color = color

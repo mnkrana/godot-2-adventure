@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgjhqp7kb4xo8"]
+[gd_scene load_steps=9 format=3 uid="uid://dgjhqp7kb4xo8"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3f27t"]
 [ext_resource type="PackedScene" uid="uid://3v8bgnoklk5o" path="res://scenes/player.tscn" id="1_orgty"]
 [ext_resource type="PackedScene" uid="uid://3nt8ag5lcpdy" path="res://scenes/Tree.tscn" id="2_v8bgh"]
+[ext_resource type="PackedScene" uid="uid://bs3ini1ighocw" path="res://scenes/color_changer.tscn" id="4_8idjp"]
 
 [sub_resource type="Curve2D" id="Curve2D_d3uhi"]
 _data = {
@@ -26,7 +27,8 @@ script = ExtResource("1_3f27t")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -30
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="GameBg" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
 offset_left = -742.0
 offset_top = -389.0
 offset_right = 2229.0
@@ -51,6 +53,13 @@ curve = SubResource("Curve2D_d3uhi")
 unique_name_in_owner = true
 position = Vector2(-791, -646)
 rotation = -0.0119266
+
+[node name="ColorChanger" parent="Player" instance=ExtResource("4_8idjp")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="Trees" type="Node" parent="."]
 
@@ -293,5 +302,6 @@ action_mode = 0
 text = "Restart"
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="color_changed" from="Player/ColorChanger" to="." method="_on_color_changer_color_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="GameOver/ColorRect/Button" to="." method="_on_button_pressed"]
